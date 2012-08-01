@@ -250,6 +250,7 @@ Module mdlistar
                 MainWin.ListaExplorer.Items(contadoritems).ImageIndex = 83
             End If
 
+
         Next
 
         MainWin.ListaExplorer.EndUpdate()
@@ -495,6 +496,8 @@ Module mdlistar
             Else
                 MainWin.ListaExplorer.Items(contadoritems).ImageIndex = 83
             End If
+
+
 
         Next
 
@@ -742,6 +745,7 @@ Module mdlistar
             Else
                 MainWin.ListaExplorer.Items(contadoritems).ImageIndex = 83
             End If
+
 
         Next
 
