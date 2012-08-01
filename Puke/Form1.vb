@@ -60,7 +60,7 @@ Public Class MainWin
 
     Private Sub ComboBox1_SelectedIndexChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboRuta.SelectedIndexChanged
         Try
-            mdlistar.ListarOnEnter()
+            'mdlistar.ListarOnEnter()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -68,23 +68,18 @@ Public Class MainWin
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRef.Click
-        mdlistar.ListarOnEnter()
+        ' mdlistar.ListarOnEnter()
     End Sub
 
     Private Sub ListView1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaExplorer.SelectedIndexChanged
-        Try
-            MsgBox(ListaExplorer.Columns.Item(2).ListView.SelectedItems.Item(35).Text)
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
+        mdlistar.ClickOnlist()
     End Sub
 
     Private Sub ComboBox1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles ComboRuta.KeyDown
         Try
             If e.KeyCode = Keys.Return Then
                 e.Handled = True
-                mdlistar.ListarOnEnter()
+                ' mdlistar.ListarOnEnter()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -106,7 +101,7 @@ Public Class MainWin
                 usershit = userdir.Substring(0, posicion + 1)
             End If
             ComboRuta.Text = usershit
-            mdlistar.ListarOnBack()
+            'mdlistar.ListarOnBack()
 
         Catch ex As Exception
             MsgBox(ex.Message)

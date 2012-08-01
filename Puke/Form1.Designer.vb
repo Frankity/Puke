@@ -35,7 +35,6 @@ Partial Class MainWin
         Me.Cltamaño = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Clmodificado = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ListaExplorer = New System.Windows.Forms.ListView()
-        Me.Clicon = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SeleccionarTodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
@@ -141,7 +140,7 @@ Partial Class MainWin
         'ListaExplorer
         '
         Me.ListaExplorer.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListaExplorer.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Clicon, Me.Clnombre, Me.Cltipo, Me.Cltamaño, Me.Clmodificado})
+        Me.ListaExplorer.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Clnombre, Me.Cltipo, Me.Cltamaño, Me.Clmodificado})
         Me.ListaExplorer.ContextMenuStrip = Me.ContextMenuStrip1
         Me.ListaExplorer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListaExplorer.HideSelection = False
@@ -156,11 +155,6 @@ Partial Class MainWin
         Me.ListaExplorer.UseCompatibleStateImageBehavior = False
         Me.ListaExplorer.View = System.Windows.Forms.View.Details
         Me.ListaExplorer.VirtualListSize = 10
-        '
-        'Clicon
-        '
-        Me.Clicon.Text = ""
-        Me.Clicon.Width = 26
         '
         'ContextMenuStrip1
         '
@@ -544,7 +538,6 @@ Partial Class MainWin
     Friend WithEvents toolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents HelpToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents ListarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Clicon As System.Windows.Forms.ColumnHeader
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents ComboRuta As System.Windows.Forms.ComboBox
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
