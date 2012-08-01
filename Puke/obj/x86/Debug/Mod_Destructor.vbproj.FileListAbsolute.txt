@@ -1,0 +1,13 @@
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\bin\Debug\Mod_Destructor.exe
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\bin\Debug\Mod_Destructor.pdb
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\bin\Debug\Mod_Destructor.xml
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\obj\x86\Debug\Mod_Destructor.Form1.resources
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\obj\x86\Debug\Mod_Destructor.Resources.resources
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\obj\x86\Debug\Mod_Destructor.exe
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\obj\x86\Debug\Mod_Destructor.xml
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\obj\x86\Debug\Mod_Destructor.pdb
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Mod_Destructor\Mod_Destructor\obj\x86\Debug\Mod_Destructor.Propiedades.resources
