@@ -108,4 +108,5 @@ Public Class MainWin
         '    MsgBox(item.ToString)
         'Next
     End Sub
-End Class
+
+    End Class

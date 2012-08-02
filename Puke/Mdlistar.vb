@@ -6,7 +6,7 @@ Module mdlistar
 
     Public Sub ListarOnBack()
         Try
-            ListarItems("")
+            ListarItems()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -14,7 +14,7 @@ Module mdlistar
 
     Public Sub ListarOnEnter()
         Try
-            ListarItems("")
+            ListarItems()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -22,7 +22,7 @@ Module mdlistar
 
     Public Sub ListarOnload()
         Try
-            ListarItems("")
+            ListarItems()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -30,16 +30,10 @@ Module mdlistar
 
     Public Sub ListarOnDoubleClick()
         Try
-            Dim d As String
-            For i As Integer = 0 To MainWin.ListaExplorer.SelectedIndices.Count - 1
-                d = MainWin.ComboRuta.Text & "\" & MainWin.ListaExplorer.SelectedItems.Item(i).Text
-            Next
-            ListarItems(d)
+            ListarItems()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
-
     End Sub
 
     Public Sub btnatras()
@@ -70,10 +64,10 @@ Module mdlistar
 
     End Sub
 
-    Public Sub ListarItems(ByVal ruta As String)
+    Public Sub ListarItems()
 
         Dim d As New DirectoryInfo(MainWin.ComboRuta.Text)
-
+        MainWin.Text = MainWin.ComboRuta.Text
         MainWin.ListaExplorer.FullRowSelect = True
         MainWin.ListaExplorer.BeginUpdate()
         MainWin.ListaExplorer.Items.Clear()

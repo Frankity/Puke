@@ -1,6 +1,6 @@
 # Compiled source #
 ###################
-bin/*
-obj/*
+Puke/bin/*
+Puke/obj/*
 Desktop.ini
 Thumbs.db
