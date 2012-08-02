@@ -19,8 +19,8 @@ C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Pu
 C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\Puke.MainWin.resources
 C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\Puke.Resources.resources
-C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\Puke.Propiedades.resources
 C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
 C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
 C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
 C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\Puke.exe
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\Puke.PropForm.resources

@@ -24,9 +24,7 @@ Public Class MainWin
             abrirdlgfunc()
         Catch ex As Exception
             MsgBox(ex.Message)
-
         End Try
-
     End Sub
 
     Private Sub OpenToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OpenToolStripButton.Click
@@ -39,11 +37,9 @@ Public Class MainWin
             SplitContainer1.SplitterDistance = 50
             mdlistar.ListarOnload()
             rutainicio()
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
     End Sub
 
     Sub rutainicio()
@@ -56,30 +52,23 @@ Public Class MainWin
         Next
     End Sub
 
-
-
     Private Sub ComboBox1_SelectedIndexChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboRuta.SelectedIndexChanged
         Try
-            'mdlistar.ListarOnEnter()
+            mdlistar.ListarOnEnter()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRef.Click
-        ' mdlistar.ListarOnEnter()
-    End Sub
-
-    Private Sub ListView1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaExplorer.SelectedIndexChanged
-        mdlistar.ClickOnlist()
+        mdlistar.ListarOnEnter()
     End Sub
 
     Private Sub ComboBox1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles ComboRuta.KeyDown
         Try
             If e.KeyCode = Keys.Return Then
                 e.Handled = True
-                ' mdlistar.ListarOnEnter()
+                mdlistar.ListarOnEnter()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -87,30 +76,36 @@ Public Class MainWin
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnBack.Click
-        btnatras()
+        mdlistar.btnatras()
     End Sub
 
-    Public Sub btnatras()
+ 
+    Private Sub PropiedadesToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles PropiedadesToolStripMenuItem.Click
+        For i As Int16 = 0 To ListaExplorer.SelectedIndices.Count - 1
+            MsgBox(ListaExplorer.SelectedItems.Item(i).Text)
+        Next
+    End Sub
+
+    Private Sub ListaExplorer_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaExplorer.DoubleClick
         Try
-
-            Dim userdir As String = ComboRuta.Text
-            Dim posicion As Integer = userdir.LastIndexOf("\")
-            Dim usershit As String = userdir.Remove(2, userdir.Length - 2)
-            usershit = userdir.Substring(0, posicion)
-            If usershit.Length = 2 Then
-                usershit = userdir.Substring(0, posicion + 1)
-            End If
-            ComboRuta.Text = usershit
-            'mdlistar.ListarOnBack()
-
+            For r As Integer = 0 To ListaExplorer.SelectedIndices.Count - 1
+                Dim selectedtex As String = "\" & ListaExplorer.SelectedItems.Item(r).Text
+                Dim xDD As String = ComboRuta.Text & selectedtex
+                ComboRuta.Text = xDD
+                mdlistar.ListarOnDoubleClick()
+            Next
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
-    Private Sub PropiedadesToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles PropiedadesToolStripMenuItem.Click
-        For i As Int16 = 0 To ListaExplorer.SelectedIndices.Count - 1
-            MsgBox(ListaExplorer.SelectedItems.Item(i).Text)
-        Next
+    Private Sub ListaExplorer_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaExplorer.SelectedIndexChanged
+        'Dim index As ListView.SelectedListViewItemCollection
+        'index = ListaExplorer.SelectedItems
+        'For Each item In index
+        '    Dim lal As Integer = item.ToString.LastIndexOf("}")
+        '    item.ToString.Insert(lal, " ")
+        '    MsgBox(item.ToString)
+        'Next
     End Sub
 End Class
