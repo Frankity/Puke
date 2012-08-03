@@ -67,7 +67,7 @@ Module mdlistar
     Public Sub ListarItems()
 
         Dim d As New DirectoryInfo(MainWin.ComboRuta.Text)
-        MainWin.Text = MainWin.ComboRuta.Text
+
         MainWin.ListaExplorer.FullRowSelect = True
         MainWin.ListaExplorer.BeginUpdate()
         MainWin.ListaExplorer.Items.Clear()
@@ -78,7 +78,7 @@ Module mdlistar
             MainWin.ListaExplorer.Items.Add( _
             New ListViewItem( _
             New String() _
-            {e.Name, Replace(FileAttributes.Directory, 16, "Directorio"), "No esta Vacio", e.LastWriteTime}))
+            {e.Name, Replace(FileAttributes.Directory, 16, "Directorio"), "No esta vacio", e.LastWriteTime}))
 
             MainWin.ListaExplorer.FullRowSelect = True
             MainWin.ListaExplorer.HideSelection = False
@@ -91,12 +91,26 @@ Module mdlistar
             MainWin.ListaExplorer.EndUpdate()
         Next
 
+
         For Each f As FileInfo In d.GetFiles
             Dim item As New ListViewItem()
+
+            Dim tamaño
+            If f.Exists Then
+
+                If (f.Length / 1024) > 1024 Then
+                    tamaño = Math.Round(((f.Length / 1024) / 1024), 2).ToString() & " Mb"
+                Else
+                    tamaño = Math.Round((f.Length / 1024), 2).ToString() & " Kb"
+                End If
+            Else
+                Return
+            End If
+
             MainWin.ListaExplorer.Items.Add( _
             New ListViewItem( _
             New String() _
-            {f.Name, f.Extension, f.Length, f.LastWriteTime}))
+            {f.Name, "Archivo " & f.Extension, tamaño, f.LastWriteTime}))
 
             MainWin.ListaExplorer.FullRowSelect = True
             MainWin.ListaExplorer.HideSelection = False
@@ -305,11 +319,9 @@ Module mdlistar
                 MainWin.ListaExplorer.Items(contadoritems).ImageIndex = 83
             End If
 
-
         Next
         MainWin.ListaExplorer.EndUpdate()
-
-
+        MainWin.TotalStrip.Text = MainWin.ListaExplorer.Items.Count & " Objetos"
     End Sub
 
 End Module

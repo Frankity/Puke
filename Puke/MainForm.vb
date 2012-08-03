@@ -4,7 +4,7 @@ Imports Ionic.Zip
 Public Class MainWin
 
     Private Sub Form1_Resize(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Resize
-        SplitContainer1.SplitterDistance = 50
+        SplitContainer1.SplitterDistance = 65
     End Sub
 
     Dim abrirdlg As New OpenFileDialog
@@ -33,6 +33,7 @@ Public Class MainWin
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
+            MdXml.LeerXml()
             ComboRuta.Text = Application.StartupPath
             SplitContainer1.SplitterDistance = 50
             mdlistar.ListarOnload()
@@ -99,14 +100,18 @@ Public Class MainWin
         End Try
     End Sub
 
-    Private Sub ListaExplorer_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaExplorer.SelectedIndexChanged
-        'Dim index As ListView.SelectedListViewItemCollection
-        'index = ListaExplorer.SelectedItems
-        'For Each item In index
-        '    Dim lal As Integer = item.ToString.LastIndexOf("}")
-        '    item.ToString.Insert(lal, " ")
-        '    MsgBox(item.ToString)
-        'Next
-    End Sub
+    Private Sub VistaToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VistaToolStripButton.Click
 
-    End Class
+        If ListaExplorer.View = View.Details Then
+            ListaExplorer.View = View.List
+        Else
+            ListaExplorer.View = View.Details
+        End If
+
+    End Sub
+    '
+
+    Private Sub MainWin_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+        ' MdXml.CrearXml()
+    End Sub
+End Class
