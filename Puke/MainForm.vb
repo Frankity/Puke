@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-Imports Ionic.Zip
 
 Public Class MainWin
 
@@ -33,8 +32,10 @@ Public Class MainWin
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
+            If Not System.IO.File.Exists(Application.StartupPath & "\Config.xml") Then
+                ComboRuta.Text = Application.StartupPath
+            End If
             MdXml.LeerXml()
-            ComboRuta.Text = Application.StartupPath
             SplitContainer1.SplitterDistance = 50
             mdlistar.ListarOnload()
             rutainicio()
@@ -62,7 +63,12 @@ Public Class MainWin
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRef.Click
-        mdlistar.ListarOnEnter()
+        Try
+            mdlistar.ListarOnEnter()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub ComboBox1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles ComboRuta.KeyDown
@@ -77,10 +83,14 @@ Public Class MainWin
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnBack.Click
-        mdlistar.btnatras()
+        Try
+            mdlistar.btnatras()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
- 
     Private Sub PropiedadesToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles PropiedadesToolStripMenuItem.Click
         For i As Int16 = 0 To ListaExplorer.SelectedIndices.Count - 1
             MsgBox(ListaExplorer.SelectedItems.Item(i).Text)
@@ -101,17 +111,86 @@ Public Class MainWin
     End Sub
 
     Private Sub VistaToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VistaToolStripButton.Click
-
         If ListaExplorer.View = View.Details Then
             ListaExplorer.View = View.List
         Else
             ListaExplorer.View = View.Details
         End If
-
     End Sub
     '
 
     Private Sub MainWin_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
-        ' MdXml.CrearXml()
+        Try
+            MdXml.CrearXml()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+
+    Private Sub ListaExplorer_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles ListaExplorer.KeyDown
+        Try
+            If e.KeyCode = Keys.Return Then
+                e.Handled = True
+                For r As Integer = 0 To ListaExplorer.SelectedIndices.Count - 1
+                    Dim selectedtex As String = "\" & ListaExplorer.SelectedItems.Item(r).Text
+                    Dim xDD As String = ComboRuta.Text & selectedtex
+                    ComboRuta.Text = xDD
+                    mdlistar.ListarOnEnter()
+                Next
+            ElseIf e.KeyCode = Keys.Back Then
+                e.Handled = True
+                mdlistar.btnatras()
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub NewToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NewToolStripButton.Click
+        Try
+            For r As Integer = 0 To ListaExplorer.SelectedIndices.Count - 1
+                Dim selectedtex As String = "\" & ListaExplorer.SelectedItems.Item(r).Text
+                If selectedtex.StartsWith("\") Then
+                    Dim remv As String = selectedtex.Replace("\", "")
+                    Dim xDD As String = remv
+                    AddForm.TxtName.Text = xDD
+                    AddForm.Show()
+                End If
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub AgregarArchivosAlFicheroToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles AgregarArchivosAlFicheroToolStripMenuItem.Click
+        Try
+            For r As Integer = 0 To ListaExplorer.SelectedIndices.Count - 1
+                Dim selectedtex As String = "\" & ListaExplorer.SelectedItems.Item(r).Text
+                If selectedtex.StartsWith("\") Then
+                    Dim remv As String = selectedtex.Replace("\", "")
+                    Dim xDD As String = remv
+                    AddForm.TxtName.Text = xDD
+                    AddForm.Show()
+                End If
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub ExtraerEnUnaCarpetaEspecificaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ExtraerEnUnaCarpetaEspecificaToolStripMenuItem.Click
+        AddForm.SelCarpDest.ShowDialog()
+        MdCompDecomp.Descomprimir()
+    End Sub
+
+    Private Sub AbrirRutaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Shell("explorer.exe " & ComboRuta.Text, AppWinStyle.MaximizedFocus)
     End Sub
 End Class

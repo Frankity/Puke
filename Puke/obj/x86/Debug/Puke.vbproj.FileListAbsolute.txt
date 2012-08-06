@@ -24,3 +24,4 @@ C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Pu
 C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
 C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\Puke.exe
 C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\Puke.PropForm.resources
+C:\Documents and Settings\SERVIDOR\Mis documentos\Visual Studio 2010\Projects\Puke\Puke\obj\x86\Debug\Puke.AddForm.resources

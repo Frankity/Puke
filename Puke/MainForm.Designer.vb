@@ -77,6 +77,7 @@ Partial Class MainWin
         Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.VistaToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -245,12 +246,13 @@ Partial Class MainWin
         Me.ListaExplorer.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Clnombre, Me.Cltipo, Me.Cltamaño, Me.Clmodificado})
         Me.ListaExplorer.ContextMenuStrip = Me.ContextMenuStrip1
         Me.ListaExplorer.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListaExplorer.FullRowSelect = True
         Me.ListaExplorer.HideSelection = False
         Me.ListaExplorer.LabelEdit = True
         Me.ListaExplorer.Location = New System.Drawing.Point(0, 0)
         Me.ListaExplorer.Name = "ListaExplorer"
         Me.ListaExplorer.ShowItemToolTips = True
-        Me.ListaExplorer.Size = New System.Drawing.Size(878, 444)
+        Me.ListaExplorer.Size = New System.Drawing.Size(878, 420)
         Me.ListaExplorer.SmallImageList = Me.ImageList1
         Me.ListaExplorer.TabIndex = 3
         Me.ToolTip1.SetToolTip(Me.ListaExplorer, "Listado de Archivos")
@@ -459,6 +461,7 @@ Partial Class MainWin
         '
         'SplitContainer1.Panel1
         '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button1)
         Me.SplitContainer1.Panel1.Controls.Add(Me.ComboRuta)
         Me.SplitContainer1.Panel1.Controls.Add(Me.BtnRef)
         Me.SplitContainer1.Panel1.Controls.Add(Me.BtnBack)
@@ -472,7 +475,7 @@ Partial Class MainWin
         Me.SplitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer1.Panel2MinSize = 0
         Me.SplitContainer1.Size = New System.Drawing.Size(878, 513)
-        Me.SplitContainer1.SplitterDistance = 65
+        Me.SplitContainer1.SplitterDistance = 89
         Me.SplitContainer1.TabIndex = 5
         '
         'ComboRuta
@@ -483,9 +486,9 @@ Partial Class MainWin
         Me.ComboRuta.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.ComboRuta.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories
         Me.ComboRuta.FormattingEnabled = True
-        Me.ComboRuta.Location = New System.Drawing.Point(60, 43)
+        Me.ComboRuta.Location = New System.Drawing.Point(61, 43)
         Me.ComboRuta.Name = "ComboRuta"
-        Me.ComboRuta.Size = New System.Drawing.Size(2916, 21)
+        Me.ComboRuta.Size = New System.Drawing.Size(782, 21)
         Me.ComboRuta.TabIndex = 3
         Me.ToolTip1.SetToolTip(Me.ComboRuta, "Url de directorio")
         '
@@ -617,6 +620,19 @@ Partial Class MainWin
         Me.VistaToolStripButton.Text = "He&lp"
         Me.VistaToolStripButton.ToolTipText = "Cambiar vista"
         '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(846, 42)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(28, 23)
+        Me.Button1.TabIndex = 4
+        Me.ToolTip1.SetToolTip(Me.Button1, "Abrir en el explorador de Windows")
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'MainWin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -696,5 +712,6 @@ Partial Class MainWin
     Friend WithEvents ToolStripMenuItem6 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents SalirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TotalStrip As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class
