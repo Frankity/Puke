@@ -92,18 +92,34 @@ Public Class MainWin
     End Sub
 
     Private Sub PropiedadesToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles PropiedadesToolStripMenuItem.Click
-        For i As Int16 = 0 To ListaExplorer.SelectedIndices.Count - 1
-            MsgBox(ListaExplorer.SelectedItems.Item(i).Text)
-        Next
+        MsgBox(namefile)
     End Sub
 
+    Public Function namefile()
+        Dim lel As String
+        For i As Int16 = 0 To ListaExplorer.SelectedIndices.Count - 1
+            lel = ListaExplorer.SelectedItems.Item(i).Text
+        Next
+        Return lel
+    End Function
+
     Private Sub ListaExplorer_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaExplorer.DoubleClick
+        listarall()
+    End Sub
+
+    Public Sub listarall()
         Try
             For r As Integer = 0 To ListaExplorer.SelectedIndices.Count - 1
                 Dim selectedtex As String = "\" & ListaExplorer.SelectedItems.Item(r).Text
                 Dim xDD As String = ComboRuta.Text & selectedtex
                 ComboRuta.Text = xDD
-                mdlistar.ListarOnDoubleClick()
+                If xDD.EndsWith(".zip") Then
+                    MdCompDecomp.ListarZip(xDD)
+                ElseIf xDD.EndsWith(".puke") Then
+                    MdCompDecomp.ListarZip(xDD)
+                Else
+                    mdlistar.ListarOnDoubleClick()
+                End If
             Next
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -136,14 +152,18 @@ Public Class MainWin
                     Dim selectedtex As String = "\" & ListaExplorer.SelectedItems.Item(r).Text
                     Dim xDD As String = ComboRuta.Text & selectedtex
                     ComboRuta.Text = xDD
-                    mdlistar.ListarOnEnter()
+                    If xDD.EndsWith(".zip") Then
+                        MdCompDecomp.ListarZip(xDD)
+                    ElseIf xDD.EndsWith(".puke") Then
+                        MdCompDecomp.ListarZip(xDD)
+                    Else
+                        mdlistar.ListarOnDoubleClick()
+                    End If
                 Next
             ElseIf e.KeyCode = Keys.Back Then
                 e.Handled = True
                 mdlistar.btnatras()
-
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -183,7 +203,17 @@ Public Class MainWin
 
     Private Sub ExtraerEnUnaCarpetaEspecificaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ExtraerEnUnaCarpetaEspecificaToolStripMenuItem.Click
         AddForm.SelCarpDest.ShowDialog()
-        MdCompDecomp.Descomprimir()
+        Dim rutaarchivo As String
+
+        Try
+            For i As Int16 = 0 To ListaExplorer.SelectedIndices.Count - 1
+                rutaarchivo = ComboRuta.Text & "\" & ListaExplorer.SelectedItems.Item(i).Text
+            Next
+            MdCompDecomp.Descomprimir(rutaarchivo)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub AbrirRutaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -192,5 +222,9 @@ Public Class MainWin
 
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Shell("explorer.exe " & ComboRuta.Text, AppWinStyle.MaximizedFocus)
+    End Sub
+
+    Private Sub ListaExplorer_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaExplorer.SelectedIndexChanged
+
     End Sub
 End Class

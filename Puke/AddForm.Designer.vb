@@ -24,16 +24,16 @@ Partial Class AddForm
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckPass = New System.Windows.Forms.CheckBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.comboformato = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Txtpass = New System.Windows.Forms.TextBox()
         Me.TxtName = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -56,16 +56,16 @@ Partial Class AddForm
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.CheckBox1)
+        Me.TabPage1.Controls.Add(Me.CheckPass)
         Me.TabPage1.Controls.Add(Me.ComboBox3)
         Me.TabPage1.Controls.Add(Me.ComboBox2)
-        Me.TabPage1.Controls.Add(Me.ComboBox1)
+        Me.TabPage1.Controls.Add(Me.comboformato)
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Controls.Add(Me.TextBox2)
+        Me.TabPage1.Controls.Add(Me.Txtpass)
         Me.TabPage1.Controls.Add(Me.TxtName)
         Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
@@ -76,14 +76,14 @@ Partial Class AddForm
         Me.TabPage1.Text = "General"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'CheckPass
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(373, 72)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(15, 14)
-        Me.CheckBox1.TabIndex = 4
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.CheckPass.AutoSize = True
+        Me.CheckPass.Location = New System.Drawing.Point(373, 72)
+        Me.CheckPass.Name = "CheckPass"
+        Me.CheckPass.Size = New System.Drawing.Size(15, 14)
+        Me.CheckPass.TabIndex = 4
+        Me.CheckPass.UseVisualStyleBackColor = True
         '
         'ComboBox3
         '
@@ -102,15 +102,15 @@ Partial Class AddForm
         Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox2.TabIndex = 3
         '
-        'ComboBox1
+        'comboformato
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Puke", "Zip"})
-        Me.ComboBox1.Location = New System.Drawing.Point(9, 69)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 3
+        Me.comboformato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboformato.FormattingEnabled = True
+        Me.comboformato.Items.AddRange(New Object() {"Puke", "Zip"})
+        Me.comboformato.Location = New System.Drawing.Point(9, 69)
+        Me.comboformato.Name = "comboformato"
+        Me.comboformato.Size = New System.Drawing.Size(121, 21)
+        Me.comboformato.TabIndex = 3
         '
         'Label4
         '
@@ -157,12 +157,13 @@ Partial Class AddForm
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Nombre del archivo"
         '
-        'TextBox2
+        'Txtpass
         '
-        Me.TextBox2.Location = New System.Drawing.Point(145, 69)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(212, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.Txtpass.Enabled = False
+        Me.Txtpass.Location = New System.Drawing.Point(145, 69)
+        Me.Txtpass.Name = "Txtpass"
+        Me.Txtpass.Size = New System.Drawing.Size(212, 20)
+        Me.Txtpass.TabIndex = 1
         '
         'TxtName
         '
@@ -220,7 +221,10 @@ Partial Class AddForm
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.TabControl1)
+        Me.HelpButton = True
+        Me.MaximizeBox = False
         Me.Name = "AddForm"
+        Me.ShowInTaskbar = False
         Me.Text = "Agregar"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -230,16 +234,16 @@ Partial Class AddForm
     End Sub
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckPass As System.Windows.Forms.CheckBox
     Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents comboformato As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents Txtpass As System.Windows.Forms.TextBox
     Friend WithEvents TxtName As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage

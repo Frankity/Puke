@@ -62,6 +62,7 @@ Partial Class MainWin
         Me.PropiedadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ComboRuta = New System.Windows.Forms.ComboBox()
         Me.BtnRef = New System.Windows.Forms.Button()
         Me.BtnBack = New System.Windows.Forms.Button()
@@ -77,7 +78,6 @@ Partial Class MainWin
         Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.VistaToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -252,7 +252,7 @@ Partial Class MainWin
         Me.ListaExplorer.Location = New System.Drawing.Point(0, 0)
         Me.ListaExplorer.Name = "ListaExplorer"
         Me.ListaExplorer.ShowItemToolTips = True
-        Me.ListaExplorer.Size = New System.Drawing.Size(878, 420)
+        Me.ListaExplorer.Size = New System.Drawing.Size(878, 442)
         Me.ListaExplorer.SmallImageList = Me.ImageList1
         Me.ListaExplorer.TabIndex = 3
         Me.ToolTip1.SetToolTip(Me.ListaExplorer, "Listado de Archivos")
@@ -475,8 +475,20 @@ Partial Class MainWin
         Me.SplitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer1.Panel2MinSize = 0
         Me.SplitContainer1.Size = New System.Drawing.Size(878, 513)
-        Me.SplitContainer1.SplitterDistance = 89
+        Me.SplitContainer1.SplitterDistance = 67
         Me.SplitContainer1.TabIndex = 5
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(847, 42)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(28, 22)
+        Me.Button1.TabIndex = 4
+        Me.ToolTip1.SetToolTip(Me.Button1, "Abrir en el explorador de Windows")
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'ComboRuta
         '
@@ -619,19 +631,6 @@ Partial Class MainWin
         Me.VistaToolStripButton.Size = New System.Drawing.Size(36, 38)
         Me.VistaToolStripButton.Text = "He&lp"
         Me.VistaToolStripButton.ToolTipText = "Cambiar vista"
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(846, 42)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(28, 23)
-        Me.Button1.TabIndex = 4
-        Me.ToolTip1.SetToolTip(Me.Button1, "Abrir en el explorador de Windows")
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'MainWin
         '

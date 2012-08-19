@@ -22,7 +22,11 @@ Module mdlistar
 
     Public Sub ListarOnload()
         Try
-            ListarItems()
+            If MainWin.ComboRuta.Text.Contains(".") Then
+                ListarZip(MainWin.ComboRuta.Text)
+            Else
+                ListarItems()
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
